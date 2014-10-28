@@ -1,0 +1,15 @@
+application: go-test-modules
+# No version required, this does routing independent of version
+
+dispatch:
+  # Default module serves the typical web resources and all static resources.
+  - url: "*/hello-d"
+    module: default
+
+  # Default module serves simple hostname request.
+  - url: "*/hello-1"
+    module: module1
+
+  # Send all mobile traffic to the mobile frontend.
+  - url: "*/hello-2"
+    module: module2
